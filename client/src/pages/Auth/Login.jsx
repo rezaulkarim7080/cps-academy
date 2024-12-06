@@ -30,7 +30,7 @@ const Login = () => {
         setError("password need minimum 5 character");
       else {
         const res = await axios.post(
-          " https://cps-academy.vercel.app/api/login",
+          "https://cps-academy.vercel.app/api/login",
           {
             email,
             password,
