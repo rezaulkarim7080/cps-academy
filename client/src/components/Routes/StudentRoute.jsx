@@ -10,7 +10,9 @@ export default function Student() {
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get(" http://localhost:5000/api/student-auth");
+      const res = await axios.get(
+        " https://cps-academy.vercel.app/api/student-auth"
+      );
       if (res.data.ok) {
         setOk(true);
       } else {
