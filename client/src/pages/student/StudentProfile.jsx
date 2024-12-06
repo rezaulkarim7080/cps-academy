@@ -26,11 +26,14 @@ const StudentProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(" http://localhost:5000/api/profile", {
-        name,
-        email,
-        password,
-      });
+      const { data } = await axios.put(
+        " https://cps-academy.vercel.app/api/profile",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       if (data?.errro) {
         toast.error(data?.error);
       } else {

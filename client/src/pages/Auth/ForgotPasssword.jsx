@@ -14,7 +14,7 @@ const ForgotPasssword = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        " http://localhost:5000/api/forgot-password",
+        " https://cps-academy.vercel.app/api/forgot-password",
         {
           email,
           newPassword,

@@ -23,7 +23,9 @@ const Users = () => {
   // Fetch all users
   const UserController = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/users");
+      const { data } = await axios.get(
+        "https://cps-academy.vercel.app/api/users"
+      );
       if (data?.success) {
         setUsers(data?.users);
       }
@@ -42,7 +44,7 @@ const Users = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/user/${selected._id}`,
+        `https://cps-academy.vercel.app/api/user/${selected._id}`,
         {
           name: updatedName,
           email: updatedEmail,
@@ -71,7 +73,7 @@ const Users = () => {
   const handleDelete = async (userId) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:5000/api/user/${userId}`
+        `https://cps-academy.vercel.app/api/user/${userId}`
       );
       if (data.success) {
         toast.success(`User has been deleted`);

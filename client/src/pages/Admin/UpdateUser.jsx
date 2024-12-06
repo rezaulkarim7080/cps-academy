@@ -21,7 +21,7 @@ const UpdateUser = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        ` http://localhost:5000/api/user/${params.id}`
+        ` https://cps-academy.vercel.app/api/user/${params.id}`
       );
       setId(data.user._id);
       setName(data.user.name);
@@ -42,12 +42,15 @@ const UpdateUser = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(` http://localhost:5000/api/user/${id}`, {
-        userImage,
-        name,
-        email,
-        role,
-      });
+      const res = await axios.put(
+        ` https://cps-academy.vercel.app/api/user/${id}`,
+        {
+          userImage,
+          name,
+          email,
+          role,
+        }
+      );
       if (res && res.data.success) {
         toast.success("Product Created Successfully");
         navigate("/admin-dashboard/users");
@@ -65,7 +68,7 @@ const UpdateUser = () => {
   const handleDelete = async () => {
     try {
       const { data } = await axios.delete(
-        ` http://localhost:5000/api/user/${id}`
+        ` https://cps-academy.vercel.app/api/user/${id}`
       );
       toast.success("user DEleted Succfully");
       navigate("/");
